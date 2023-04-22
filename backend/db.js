@@ -1,9 +1,9 @@
 const Pool = require('pg').Pool;
-require('dotenv').config();
+
 
 const pool = new Pool({
     user: 'postgres',
-    password: 'postgre',
+    password: 'postgres',
     host: 'localhost',
     port: 99,
     database: 'todoApp',
