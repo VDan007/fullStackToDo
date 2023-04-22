@@ -12,3 +12,5 @@ create table users(
     email VARCHAR(255) primary key,
     hashed_password varchar(255)
 );
+
+insert into todos ();
