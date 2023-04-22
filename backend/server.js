@@ -3,9 +3,11 @@ const pool = require('./db.js');
 const express = require('express');
 const app = express();
 app.listen(PORT,()=> console.log(  `Server running on port ${PORT}` ) );
+app.use(express.static("dist"));
 
 //get all todos
 app.get('/todos', async (req,res) => {
+    //console.log(req);
     const userEmail = 'ania@test.com';
 
     try{
