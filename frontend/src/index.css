@@ -5,6 +5,11 @@ body{
     padding:0;
     /* background-color: aliceblue; */
     background-image: url('subtle-prism.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
