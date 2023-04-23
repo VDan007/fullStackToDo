@@ -7,11 +7,15 @@ export default defineConfig({
   server: {
     proxy: {
       '/todos': {
-        target: 'http://localhost:8888/todos',
+        target: 'http://localhost:8888',
         changeOrigin: true
       },
       '/todos/:userEmail': {
-        target: 'http://localhost:8888/todos/:userEmail',
+        target: 'http://localhost:8888',
+        changeOrigin: true
+      },
+      '/test': {
+        target: 'http://localhost:8888',
         changeOrigin: true
       }
     }

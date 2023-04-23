@@ -9,7 +9,7 @@ app.use(express.static("dist"));
 app.get('/todos/:userEmail', async (req,res) => {
     //console.log(req);
     const userEmail = req.params;
-    console.log(req.params);
+    console.log(req.params.userEmail);
 
     try{
       const todos = await pool.query('select * from todos where user_email=$1',[userEmail]);
@@ -19,3 +19,8 @@ app.get('/todos/:userEmail', async (req,res) => {
         console.error(err);
     }
 });
+
+app.get('/test',(req,res)=>{
+  const message = 'hiii';
+  res.json(message);
+})

@@ -17,6 +17,8 @@ function App() {
     }
   }
 
+  
+
   useEffect(
     ()=>{
       getData();
