@@ -6,8 +6,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/': {
-        target: 'http://localhost:8888',
+      '/todos': {
+        target: 'http://localhost:8888/todos',
+        changeOrigin: true
+      },
+      '/todos/:userEmail': {
+        target: 'http://localhost:8888/todos/:userEmail',
         changeOrigin: true
       }
     }

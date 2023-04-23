@@ -6,9 +6,10 @@ app.listen(PORT,()=> console.log(  `Server running on port ${PORT}` ) );
 app.use(express.static("dist"));
 
 //get all todos
-app.get('/todos', async (req,res) => {
+app.get('/todos/:userEmail', async (req,res) => {
     //console.log(req);
-    const userEmail = 'ania@test.com';
+    const userEmail = req.params;
+    console.log(req.params);
 
     try{
       const todos = await pool.query('select * from todos where user_email=$1',[userEmail]);

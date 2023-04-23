@@ -9,7 +9,7 @@ function App() {
   async function getData(){
     const userEmail = 'ania@test.com';
     try {
-      const response = await fetch(`/todos`);
+      const response = await fetch(`/todos/${userEmail}`);
       const json = await response.json();
       console.log(json);
     } catch (err) {
