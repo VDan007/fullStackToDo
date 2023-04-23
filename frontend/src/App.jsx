@@ -1,17 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ListHeader from './components/ListHeader';
+import ListItem from './components/ListItem';
+
+
 
 
 
 
 function App() {
+  const userEmail = 'ania@test.com';
+  const [tasks,setTasks] = useState(null);
+  console.log(tasks);
 
   async function getData(){
-    const userEmail = 'ania@test.com';
     try {
       const response = await fetch(`/todos/${userEmail}`);
       const json = await response.json();
-      console.log(json);
+      setTasks(json);
     } catch (err) {
       console.error(err);
     }
@@ -24,12 +29,22 @@ function App() {
       getData();
     },[]
   );
+
+  console.log(tasks);
+
+   const sortedTasks = tasks?.sort((a,b) => new Date(a.date) - new Date(b.date));
   
 
   return (
    <div className='app'>
-    <ListHeader 
-      listName='🏝️ Holidya Tick List'/>
+    <ListHeader listName='🏝️ Holidya Tick List'/>
+    {sortedTasks?.map(task=>{
+       return <ListItem
+        key={task.id}
+        task={task}
+      />
+    })}
+
    </div>
   )
 }

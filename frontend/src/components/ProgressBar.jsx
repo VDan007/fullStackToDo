@@ -5,7 +5,7 @@ function ProgressBar() {
   
 
     return (
-     <div>hi</div>
+     <div></div>
     )
   }
   

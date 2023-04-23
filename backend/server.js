@@ -8,8 +8,8 @@ app.use(express.static("dist"));
 //get all todos
 app.get('/todos/:userEmail', async (req,res) => {
     //console.log(req);
-    const userEmail = req.params;
-    console.log(req.params.userEmail);
+    const userEmail = req.params.userEmail;
+    //console.log(req.params.userEmail);
 
     try{
       const todos = await pool.query('select * from todos where user_email=$1',[userEmail]);

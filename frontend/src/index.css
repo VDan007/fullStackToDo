@@ -18,10 +18,14 @@ body{
     margin-top:50px;
 }
 
-.button__container{
+.button__container,
+.info__container{
     display: flex;
     align-items: center;
+    
 }
+
+
 
 .button__container button{
     margin:  0 5px;
@@ -40,3 +44,23 @@ body{
     border-bottom: rgba(0,0,0,0.5) 1px solid;
 }
 
+.list__item{
+    width: 100%;
+    margin: 10px 0 ;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tick{
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.edit{
+    border: 1.5px solid rgb(141,181,145);
+    color: rgb(141,181,145);
+    background-color: transparent;
+    text-transform: uppercase;
+}
