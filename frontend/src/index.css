@@ -3,7 +3,8 @@
 body{
     margin:0;
     padding:0;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-image: url('subtle-prism.svg');
     display: flex;
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
