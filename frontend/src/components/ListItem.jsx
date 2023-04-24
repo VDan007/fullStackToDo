@@ -1,8 +1,10 @@
 import ProgressBar from './ProgressBar';
 import { TickIcon } from './TickIcon';
+import Modal from './Modal';
+import { useState } from 'react';
 
 function ListItem({task}) {
-  
+    const [showModal,setShowModal] = useState(false);
 
     return (
      <li className="list__item">
@@ -15,10 +17,12 @@ function ListItem({task}) {
       </div>
 
       <div className='button__container'>
-        <button className='edit'>EDIT</button>
+        <button className='edit' onClick={()=>setShowModal(true)}>EDIT</button>
         <button className='delete'>DELETE</button>
       </div>
-      
+      {showModal && <Modal
+                    mode = 'edit'
+                    setShowModal={setShowModal}/>}
      </li>
     )
   }
