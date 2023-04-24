@@ -21,6 +21,7 @@ function ListItem({task}) {
         <button className='delete'>DELETE</button>
       </div>
       {showModal && <Modal
+                    task={task}
                     mode = 'edit'
                     setShowModal={setShowModal}/>}
      </li>

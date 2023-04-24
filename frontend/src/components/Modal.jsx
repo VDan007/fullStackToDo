@@ -1,17 +1,25 @@
 import { useState } from 'react';
 
-function Modal({mode,setShowModal}) {
+function Modal({mode,setShowModal,task}) {
     
     const editMode = mode === 'edit' ? true : false;
     const [data,setData] = useState({
-      user_email: '',
-      title:'',
-      progress: '',
+      user_email: editMode ?  task.user_email : '',
+      title: editMode ? task.title : '',
+      progress: editMode ? task.progress : '',
       data: editMode ? '' : new Date()
     });
    
 
-    function handleChange(e){
+    function postData(){
+      try{
+        fetch()
+      }catch(err){
+        console.log(err);
+      }
+    }
+
+    function handleChange(e){ 
         console.log('changing');
         const {name,value} = e.target;
         
